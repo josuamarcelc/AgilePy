@@ -1,36 +1,35 @@
 # AgilePy 🐍
 
-**AgilePy** is a minimal, modular Python micro-framework focused on clean frontend rendering using Flask — inspired by the simplicity of Lumen (PHP), but built the Pythonic way.
+**AgilePy** is a lightweight, modular Python micro-framework designed for building frontend-focused web apps with clean code and fast development. Inspired by the simplicity of Lumen (PHP), AgilePy lets you focus on views and routing, not boilerplate.
 
 🌐 Website: [https://agilepy.com](https://agilepy.com)
 
 ---
 
-## ⚡ Features
+## ✨ Why AgilePy?
 
-* 🚀 Fast and lightweight
-* 🧹 Module-based views (no controllers)
-* 🎨 Jinja2 templating
-* 📁 Static asset support
-* ☁️ Easy to deploy with Gunicorn + Nginx
-* 🔍 Simple folder structure
+* ✅ **Minimal**: No bloated tools or dependencies.
+* 💡 **Modular**: Organize your views the way you like, using Python modules.
+* 🎨 **Beautiful Templating**: Powered by Jinja2 (included in Flask).
+* 🔧 **Zero config**: Just clone and run.
+* 🚀 **Deploy-ready**: Works with Gunicorn + Nginx out of the box.
 
 ---
 
-## 📁 Project Structure
+## 📁 Clean Project Structure
 
 ```
 agilepy/
-├── views/
-│   └── home.py
-├── templates/
+├── views/              # Python view modules
+│   └── home.py        # Example view module
+├── templates/          # HTML files with Jinja2 templating
 │   └── home.html
-├── static/
+├── static/             # CSS, JS, assets
 │   └── style.css
-├── routes.py
-├── app.py
-├── wsgi.py
-├── requirements.txt
+├── routes.py           # Route definitions
+├── app.py              # Main entry point
+├── wsgi.py             # Deployment entry for Gunicorn
+├── requirements.txt    # Required packages
 └── README.md
 ```
 
@@ -38,7 +37,7 @@ agilepy/
 
 ## 🚀 Quickstart
 
-### 1. Install dependencies
+### 1. Install Requirements
 
 ```bash
 python3 -m venv venv
@@ -46,19 +45,19 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Run the app
+### 2. Run the App (Dev Mode)
 
 ```bash
 python app.py
 ```
 
-Visit [http://localhost:5000](http://localhost:5000)
+Open your browser at: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 🌐 Deployment (Gunicorn + Nginx)
+## 🌐 Deployment Guide (Gunicorn + Nginx)
 
-Create `wsgi.py`:
+### Create `wsgi.py`
 
 ```python
 from app import app
@@ -67,15 +66,17 @@ if __name__ == "__main__":
     app.run()
 ```
 
-Run using:
+### Run via Gunicorn
 
 ```bash
 gunicorn --bind 0.0.0.0:8000 wsgi:app
 ```
 
+> For production setup with Nginx + SSL, see the docs at [AgilePy.com](https://agilepy.com)
+
 ---
 
-## 📄 Example View (`views/home.py`)
+## 🖊️ Sample View Module: `views/home.py`
 
 ```python
 from flask import render_template
@@ -86,14 +87,18 @@ def index():
 
 ---
 
-## 📄 License
+## 📚 License
 
-MIT License — free to use, modify, and share.
+AgilePy is open-source under the **MIT License** — free to use, modify, and distribute.
 
 ---
 
-## 🤝 Contribute
+## 👍 Contributing
 
-Pull requests and issues welcome.
+We welcome contributions of all kinds!
 
-Join us at [AgilePy.com](https://agilepy.com)
+* Report bugs
+* Suggest features
+* Submit pull requests
+
+Join the AgilePy community at [AgilePy.com](https://agilepy.com)
